@@ -172,7 +172,6 @@ namespace Platformer.Mechanics
             if (col.CompareTag("Spring"))
             {
                 jumpTakeOffSpeed = 7;
-                jumpState = JumpState.Landed;
             }
 	   }
     }
