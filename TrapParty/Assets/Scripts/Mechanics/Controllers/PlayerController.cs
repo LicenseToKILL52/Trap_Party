@@ -157,5 +157,23 @@ namespace Platformer.Mechanics
             InFlight,
             Landed
         }
+
+	   void OnTriggerEnter2D(Collider2D col)
+	   {
+	       if (col.CompareTag("Spring"))
+	       {
+		      jumpTakeOffSpeed = 14;
+		      jumpState = JumpState.PrepareToJump;
+	       }
+	   }
+
+	   void OnTriggerExit2D(Collider2D col)
+	   {
+            if (col.CompareTag("Spring"))
+            {
+                jumpTakeOffSpeed = 7;
+                jumpState = JumpState.Landed;
+            }
+	   }
     }
 }
